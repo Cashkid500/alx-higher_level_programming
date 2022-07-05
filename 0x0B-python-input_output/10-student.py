@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-# 11-student.py
-# Auth: James Obekpa
+# 10-student.py
+
 """Defines a class Student."""
 
 
@@ -32,12 +32,3 @@ class Student:
                 all(type(ele) == str for ele in attrs)):
             return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
         return self.__dict__
-
-    def reload_from_json(self, json):
-        """Replace all attributes of the Student.
-
-        Args:
-            json (dict): The key/value pairs to replace attributes with.
-        """
-        for k, v in json.items():
-            setattr(self, k, v)
